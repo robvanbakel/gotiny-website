@@ -115,14 +115,20 @@ const GoTiny = {
       this.showHistory = !this.showHistory
       this.localHistory.forEach((item) => (item.copied = false))
     },
-    historyCopy(e, tiny) {
-      window.getSelection().selectAllChildren(e.path[2].querySelector("span.tiny"))
+    historyCopy(e) {
+
+      // Select span with GoTiny link
+      const tiny = e.target.parentElement.parentElement.querySelector("span.tiny")
+
+      // Select and copy link to clipboard
+      window.getSelection().selectAllChildren(tiny)
       document.execCommand("copy")
       window.getSelection().removeAllRanges()
 
+      // Set copied property for selected item
       this.localHistory.forEach((item) => (item.copied = false))
+      this.localHistory.find((item) => item.tiny === tiny.textContent).copied = true
 
-      this.localHistory.find((item) => item.tiny === tiny).copied = true
     },
     clearLocalHistory() {
       this.localHistory = []

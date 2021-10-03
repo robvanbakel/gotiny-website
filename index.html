@@ -56,7 +56,7 @@
               <span class="long"> {{item.long}} </span>
               <span class="tiny"> {{item.tiny}} </span>
               <div class="copy-wrapper">
-                <button v-if="!item.copied" @click="historyCopy($event,item.tiny)">Copy</button>
+                <button v-if="!item.copied" @click="historyCopy">Copy</button>
                 <span v-else>Copied!</span>
               </div>
             </li>
