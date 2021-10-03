@@ -124,6 +124,10 @@ const GoTiny = {
 
       this.localHistory.find((item) => item.tiny === tiny).copied = true
     },
+    clearLocalHistory() {
+      this.localHistory = []
+      localStorage.removeItem('localHistory')
+    }
   },
   mounted() {
     this.$refs.userInput.focus()

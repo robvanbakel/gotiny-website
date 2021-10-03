@@ -47,8 +47,8 @@
       <div class="error-message">{{ errorMessage }}</div>
       <div class="history-wrapper" v-if="localHistory.length">
         <div class="toggle-wrapper" @click="toggleShowHistory">
-          <h3 v-if="showHistory">Hide Local History</h3>
-          <h3 v-else>Show Local History</h3>
+          <h3 v-if="showHistory">Hide local history</h3>
+          <h3 v-else>Show local history</h3>
         </div>
         <div class="history" v-if="showHistory">
           <ul>
@@ -61,6 +61,10 @@
               </div>
             </li>
           </ul>
+          <div class="clear-local-history-wrapper" @click="clearLocalHistory">
+            <img src="./assets/icn_delete.svg" alt="delete" />
+            <h4>Clear local history</h4>
+          </div>
         </div>
       </div>
     </div>

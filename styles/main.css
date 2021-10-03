@@ -312,7 +312,7 @@ div#app .history-wrapper .history ul {
 }
 div#app .history-wrapper .history ul li {
   padding: 12px;
-  border-radius: 12px;
+  border-radius: 6px;
   display: flex;
   align-items: center;
 }
@@ -367,6 +367,31 @@ div#app .history-wrapper .history ul li .copy-wrapper span {
   color: #5535af;
   font-weight: 600;
   font-size: 14px;
+}
+div#app .history-wrapper .history .clear-local-history-wrapper {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  cursor: pointer;
+  margin: 32px auto 0;
+  display: flex;
+  padding: 20px;
+  border-radius: 6px;
+  align-items: center;
+  white-space: nowrap;
+  color: #5535af;
+}
+div#app .history-wrapper .history .clear-local-history-wrapper:hover {
+  background-color: #f2f2f2;
+}
+div#app .history-wrapper .history .clear-local-history-wrapper img {
+  height: 17px;
+  margin-right: 8px;
+  margin-top: -2px;
+}
+div#app .history-wrapper .history .clear-local-history-wrapper h4 {
+  font-size: 15px;
+  font-weight: 500;
 }
 @media screen and (max-width: 720px) {
   div#app .history-wrapper {
