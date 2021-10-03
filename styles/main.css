@@ -23,10 +23,10 @@ header {
   padding: 100px 0 150px;
   text-align: center;
   position: relative;
+  height: auto;
 }
 @media screen and (max-width: 720px) {
   header {
-    height: auto;
     padding: 80px 0 100px;
   }
 }
@@ -287,6 +287,90 @@ div#app .error-message {
     text-align: center;
     top: 110px;
     font-size: 12px;
+  }
+}
+div#app .history-wrapper {
+  margin: 20px;
+  width: 720px;
+  text-align: center;
+}
+div#app .history-wrapper h3 {
+  font-size: 17px;
+  font-weight: 500;
+  opacity: 0.35;
+  transition: all 120ms ease-in-out;
+  cursor: pointer;
+}
+div#app .history-wrapper h3:hover {
+  opacity: 0.5;
+}
+div#app .history-wrapper .history {
+  margin-top: 40px;
+}
+div#app .history-wrapper .history ul {
+  list-style: none;
+}
+div#app .history-wrapper .history ul li {
+  padding: 12px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+}
+div#app .history-wrapper .history ul li:hover {
+  background-color: #f2f2f2;
+}
+div#app .history-wrapper .history ul li span.long {
+  font-size: 12px;
+  color: #7c7c7c;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: left;
+  overflow: hidden;
+  margin-right: 24px;
+}
+div#app .history-wrapper .history ul li span.tiny {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-left: auto;
+}
+div#app .history-wrapper .history ul li .copy-wrapper {
+  margin-left: 12px;
+  height: 32px;
+  width: 90px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div#app .history-wrapper .history ul li .copy-wrapper button {
+  border: 1px solid #5535af;
+  outline: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: transparent;
+  color: #5535af;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 99px;
+  cursor: pointer;
+  transition: 200ms;
+  width: 100%;
+  height: 100%;
+}
+div#app .history-wrapper .history ul li .copy-wrapper button:hover {
+  background-color: #5535af;
+  color: #fff;
+}
+div#app .history-wrapper .history ul li .copy-wrapper span {
+  color: #5535af;
+  font-weight: 600;
+  font-size: 14px;
+}
+@media screen and (max-width: 720px) {
+  div#app .history-wrapper {
+    width: 95vw;
   }
 }
 

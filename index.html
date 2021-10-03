@@ -45,6 +45,24 @@
         </div>
       </div>
       <div class="error-message">{{ errorMessage }}</div>
+      <div class="history-wrapper" v-if="localHistory.length">
+        <div class="toggle-wrapper" @click="toggleShowHistory">
+          <h3 v-if="showHistory">Hide Local History</h3>
+          <h3 v-else>Show Local History</h3>
+        </div>
+        <div class="history" v-if="showHistory">
+          <ul>
+            <li v-for="item in localHistory" :key="item.tiny">
+              <span class="long"> {{item.long}} </span>
+              <span class="tiny"> {{item.tiny}} </span>
+              <div class="copy-wrapper">
+                <button v-if="!item.copied" @click="historyCopy($event,item.tiny)">Copy</button>
+                <span v-else>Copied!</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
     <main>
       <section id="features">
