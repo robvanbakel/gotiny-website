@@ -73,7 +73,8 @@ const GoTiny = {
         tiny,
       })
 
-      localStorage.setItem('localHistory', JSON.stringify(this.localHistory))
+      localStorage.setItem("localHistory", JSON.stringify(this.localHistory))
+      this.resetLocalHistoryCopyState()
 
       window.addEventListener("keydown", (e) => {
         if (this.showOutput) {
@@ -97,6 +98,8 @@ const GoTiny = {
         document.execCommand("copy")
         window.getSelection().removeAllRanges()
 
+        this.resetLocalHistoryCopyState()
+
         this.showLinkCopied = true
         setTimeout(() => (this.showLinkCopied = false), 1200)
       }
@@ -113,10 +116,9 @@ const GoTiny = {
     },
     toggleShowHistory() {
       this.showHistory = !this.showHistory
-      this.localHistory.forEach((item) => (item.copied = false))
+      this.resetLocalHistoryCopyState()
     },
     historyCopy(e) {
-
       // Select span with GoTiny link
       const tiny = e.target.parentElement.parentElement.querySelector("span.tiny")
 
@@ -126,14 +128,22 @@ const GoTiny = {
       window.getSelection().removeAllRanges()
 
       // Set copied property for selected item
-      this.localHistory.forEach((item) => (item.copied = false))
-      this.localHistory.find((item) => item.tiny === tiny.textContent).copied = true
-
+      this.resetLocalHistoryCopyState(tiny.textContent)
     },
     clearLocalHistory() {
       this.localHistory = []
-      localStorage.removeItem('localHistory')
-    }
+      localStorage.removeItem("localHistory")
+    },
+    resetLocalHistoryCopyState(tiny) {
+
+      // Set all copied properties to false
+      this.localHistory.forEach((item) => (item.copied = false))
+
+      // If specified, set copied property selected item
+      if (tiny) {
+        this.localHistory.find((item) => item.tiny === tiny).copied = true
+      }
+    },
   },
   mounted() {
     this.$refs.userInput.focus()
