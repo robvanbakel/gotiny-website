@@ -111,7 +111,10 @@ const GoTiny = {
       }, 120)
     },
     changePlaceholder() {
-      this.$refs.userInput.setAttribute("placeholder", "e.g. " + this.placeholderContent[Math.floor(Math.random() * this.placeholderContent.length)])
+      this.$refs.userInput.setAttribute(
+        "placeholder",
+        "e.g. " + this.placeholderContent[Math.floor(Math.random() * this.placeholderContent.length)]
+      )
       this.$refs.userInput.focus()
     },
     toggleShowHistory() {
@@ -131,11 +134,12 @@ const GoTiny = {
       this.resetLocalHistoryCopyState(tiny.textContent)
     },
     clearLocalHistory() {
-      this.localHistory = []
-      localStorage.removeItem("localHistory")
+      if (confirm("Are you sure you want to clear your local history?")) {
+        this.localHistory = []
+        localStorage.removeItem("localHistory")
+      }
     },
     resetLocalHistoryCopyState(tiny) {
-
       // Set all copied properties to false
       this.localHistory.forEach((item) => (item.copied = false))
 
