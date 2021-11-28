@@ -1,4 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap");
+#discord .title span {
+  background-color: #758ad4;
+}
+#discord a[role=button] {
+  background-color: #758ad4;
+}
+#discord a[role=button]:hover {
+  background-color: #657dcf;
+}
+#discord a[role=button]:active {
+  background-color: #5670ca;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -470,32 +483,31 @@ main section#integration {
   background-color: #36393e;
   display: flex;
   justify-content: center;
-  gap: 120px;
+  gap: 60px;
 }
-main section#integration div#discord {
+main section#integration > div {
   text-align: center;
 }
-main section#integration div#discord img {
+main section#integration > div img {
   width: 62px;
 }
-main section#integration div#discord div.title {
+main section#integration > div div.title {
   font-size: 22px;
   letter-spacing: 0.02;
   font-weight: 600;
   color: #dcddde;
   margin-top: 22px;
 }
-main section#integration div#discord div.title span {
+main section#integration > div div.title span {
   font-size: 14px;
   padding: 0.15em 0.35em;
   position: relative;
   left: 5px;
-  bottom: 3px;
+  bottom: 2px;
   border-radius: 4px;
   color: #fff;
-  background-color: #758ad4;
 }
-main section#integration div#discord div.online-label {
+main section#integration > div div.online-label {
   font-weight: 700;
   font-size: 15px;
   text-transform: lowercase;
@@ -504,7 +516,7 @@ main section#integration div#discord div.online-label {
   position: relative;
   letter-spacing: 0.02em;
 }
-main section#integration div#discord div.online-label span {
+main section#integration > div div.online-label span {
   display: inline-block;
   position: relative;
   top: 1px;
@@ -514,8 +526,7 @@ main section#integration div#discord div.online-label span {
   background-color: #63b285;
   border-radius: 50%;
 }
-main section#integration div#discord a[role=button] {
-  background-color: #758ad4;
+main section#integration > div a[role=button] {
   color: #fff;
   display: flex;
   justify-content: center;
@@ -526,12 +537,6 @@ main section#integration div#discord a[role=button] {
   width: 168px;
   height: 44px;
   transition: 100ms;
-}
-main section#integration div#discord a[role=button]:hover {
-  background-color: #657dcf;
-}
-main section#integration div#discord a[role=button]:active {
-  background-color: #5670ca;
 }
 
 footer {

@@ -1,10 +1,31 @@
 // Google Fonts
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap');
 
 // Colors
 $color-primary: #5535af;
 $color-heading: #3d3d3d;
 $color-text: #555;
+
+// Mixins
+@mixin integration-color($integration, $color) {
+  ##{$integration} {
+    .title span {
+      background-color: $color;
+    }
+    a[role='button'] {
+      background-color: $color;
+      &:hover {
+        background-color: darken($color, 4%);
+      }
+      &:active {
+        background-color: darken($color, 8%);
+      }
+    }
+  }
+}
+
+// Integration colors
+@include integration-color(discord, #758ad4);
 
 // Global
 * {
@@ -14,7 +35,7 @@ $color-text: #555;
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: #f7f7f7;
   font-size: 12px;
   color: $color-text;
@@ -338,7 +359,6 @@ div#app {
           font-size: 15px;
           font-weight: 500;
         }
-
       }
     }
     @media screen and (max-width: 720px) {
@@ -413,8 +433,8 @@ main {
     background-color: #36393e;
     display: flex;
     justify-content: center;
-    gap: 120px;
-    div#discord {
+    gap: 60px;
+    & > div {
       text-align: center;
       img {
         width: 62px;
@@ -430,10 +450,9 @@ main {
           padding: 0.15em 0.35em;
           position: relative;
           left: 5px;
-          bottom: 3px;
+          bottom: 2px;
           border-radius: 4px;
           color: #fff;
-          background-color: #758ad4;
         }
       }
       div.online-label {
@@ -455,8 +474,7 @@ main {
           border-radius: 50%;
         }
       }
-      a[role="button"] {
-        background-color: #758ad4;
+      a[role='button'] {
         color: #fff;
         display: flex;
         justify-content: center;
@@ -467,12 +485,6 @@ main {
         width: 168px;
         height: 44px;
         transition: 100ms;
-        &:hover {
-          background-color: darken(#758ad4, 4%);
-        }
-        &:active {
-          background-color: darken(#758ad4, 8%);
-        }
       }
     }
   }
@@ -490,7 +502,7 @@ footer {
       font-size: 14px;
       display: inline-block;
       &::before {
-        content: "|";
+        content: '|';
         margin: 0 12px;
       }
       &:first-child {
