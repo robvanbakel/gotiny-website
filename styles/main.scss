@@ -14,10 +14,10 @@ $color-text: #555;
     }
     a[role='button'] {
       background-color: $color;
-      &:hover {
+      &:not(.coming-soon):hover {
         background-color: darken($color, 4%);
       }
-      &:active {
+      &:not(.coming-soon):active {
         background-color: darken($color, 8%);
       }
     }
@@ -26,6 +26,7 @@ $color-text: #555;
 
 // Integration colors
 @include integration-color(discord, #758ad4);
+@include integration-color(slack, #148567);
 
 // Global
 * {
@@ -433,7 +434,7 @@ main {
     background-color: #36393e;
     display: flex;
     justify-content: center;
-    gap: 60px;
+    gap: 80px;
     & > div {
       text-align: center;
       img {
@@ -455,11 +456,10 @@ main {
           color: #fff;
         }
       }
-      div.online-label {
+      div.label {
         font-weight: 700;
         font-size: 15px;
         text-transform: lowercase;
-        color: #63b285;
         margin: 8px 0 20px;
         position: relative;
         letter-spacing: 0.02em;
@@ -470,8 +470,19 @@ main {
           right: 6px;
           width: 10px;
           height: 10px;
-          background-color: #63b285;
           border-radius: 50%;
+        }
+        &.online {
+          color: #63b285;
+          span {
+            background-color: #63b285;
+          }
+        }
+        &.coming-soon {
+          color: #C2A250;
+          span {
+            background-color: #C2A250;
+          }
         }
       }
       a[role='button'] {
@@ -485,6 +496,10 @@ main {
         width: 168px;
         height: 44px;
         transition: 100ms;
+        &.coming-soon {
+          cursor: not-allowed;
+          opacity: 0.2;
+        }
       }
     }
   }
