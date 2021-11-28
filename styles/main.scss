@@ -433,8 +433,12 @@ main {
     padding: 48px 0;
     background-color: #36393e;
     display: flex;
+    align-items: center;
     justify-content: center;
     gap: 80px;
+    @media screen and (max-width: 720px) {
+      flex-direction: column;
+    }
     & > div {
       text-align: center;
       img {

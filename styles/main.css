@@ -495,8 +495,14 @@ main section#integration {
   padding: 48px 0;
   background-color: #36393e;
   display: flex;
+  align-items: center;
   justify-content: center;
   gap: 80px;
+}
+@media screen and (max-width: 720px) {
+  main section#integration {
+    flex-direction: column;
+  }
 }
 main section#integration > div {
   text-align: center;
