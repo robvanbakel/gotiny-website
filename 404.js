@@ -4,7 +4,7 @@ const tip = document.querySelector('.tip')
 
 const allowedCharacters = /^[a-z0-9_-]+$/;
 
-const code = window.location.search.substring(1,)
+const code = new URL(window.location).searchParams.get('code')
 
 if(!code) {
   window.location.replace("/");
