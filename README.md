@@ -16,3 +16,4 @@ Creating short links with GoTiny is accessible for everyone at [gotiny.cc](https
 - [robvanbakel/gotiny-api](https://github.com/robvanbakel/gotiny-api)
 - [robvanbakel/gotiny-sdk](https://github.com/robvanbakel/gotiny-sdk)
 - [robvanbakel/gotiny-discord-bot](https://github.com/robvanbakel/gotiny-discord-bot)
+- [robvanbakel/gotiny-slack-bot](https://github.com/robvanbakel/gotiny-slack-bot)
