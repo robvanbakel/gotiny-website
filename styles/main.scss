@@ -7,26 +7,26 @@ $color-heading: #3d3d3d;
 $color-text: #555;
 
 // Mixins
-@mixin integration-color($integration, $color) {
+@mixin integration-color($integration, $transColor, $color) {
   ##{$integration} {
     .title span {
       background-color: $color;
     }
     a[role='button'] {
-      background-color: $color;
+      background-color: $transColor;
       &:not(.coming-soon):hover {
-        background-color: darken($color, 4%);
+        background-color: $color;
       }
       &:not(.coming-soon):active {
-        background-color: darken($color, 8%);
+        background-color: darken($color, 4%);
       }
     }
   }
 }
 
 // Integration colors
-@include integration-color(discord, #758ad4);
-@include integration-color(slack, #148567);
+@include integration-color(discord, #758ad499 , #758ad4);
+@include integration-color(slack, #14856799 , #148567);
 
 // Global
 * {

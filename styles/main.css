@@ -3,26 +3,26 @@
   background-color: #758ad4;
 }
 #discord a[role=button] {
-  background-color: #758ad4;
+  background-color: #758ad499;
 }
 #discord a[role=button]:not(.coming-soon):hover {
-  background-color: #657dcf;
+  background-color: #758ad4;
 }
 #discord a[role=button]:not(.coming-soon):active {
-  background-color: #5670ca;
+  background-color: #657dcf;
 }
 
 #slack .title span {
   background-color: #148567;
 }
 #slack a[role=button] {
-  background-color: #148567;
+  background-color: #14856799;
 }
 #slack a[role=button]:not(.coming-soon):hover {
-  background-color: #117359;
+  background-color: #148567;
 }
 #slack a[role=button]:not(.coming-soon):active {
-  background-color: #0f624c;
+  background-color: #117359;
 }
 
 * {
