@@ -1,5 +1,5 @@
 // Google Fonts
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&family=Roboto+Condensed:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&family=Roboto+Condensed:wght@400;700&display=swap');
 
 // Colors
 $color-primary: #5535af;
@@ -11,7 +11,7 @@ $color-primary: #5535af;
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   padding: 0 1em;
   background-color: $color-primary;
   color: #fff;
@@ -43,7 +43,7 @@ main {
     margin-bottom: 0.5em;
   }
   h1 {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
     font-size: 3.2em;
     font-weight: 400;
     margin-bottom: 1em;
@@ -57,8 +57,8 @@ main {
     line-height: 1.8;
     margin-bottom: 1em;
     span.char {
-      background-color: rgba(255,255,255,0.2);
-      padding: 0.15em .35em;
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 0.15em 0.35em;
       border-radius: 4px;
     }
   }
@@ -79,7 +79,7 @@ footer {
       font-size: 14px;
       display: inline-block;
       &::before {
-        content: "|";
+        content: '|';
         margin: 0 12px;
       }
       &:first-child {

@@ -25,8 +25,8 @@ $color-text: #555;
 }
 
 // Integration colors
-@include integration-color(discord, #758ad499 , #758ad4);
-@include integration-color(slack, #14856799 , #148567);
+@include integration-color(discord, #758ad499, #758ad4);
+@include integration-color(slack, #14856799, #148567);
 
 // Global
 * {
@@ -483,9 +483,9 @@ main {
           }
         }
         &.coming-soon {
-          color: #C2A250;
+          color: #c2a250;
           span {
-            background-color: #C2A250;
+            background-color: #c2a250;
           }
         }
       }

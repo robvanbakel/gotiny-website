@@ -1,8 +1,8 @@
 const GoTiny = {
   data() {
     return {
-      userInput: "",
-      output: "",
+      userInput: '',
+      output: '',
       error: false,
       showOutput: false,
       showLinkCopied: false,
@@ -10,19 +10,19 @@ const GoTiny = {
       errorMessage: null,
       localHistory: [],
       placeholderContent: [
-        "https://google.com/very%20long%20url",
-        "https://youtube.com/very%20long%20url",
-        "https://wikipedia.org/very%20long%20url",
-        "https://twitter.com/very%20long%20url",
-        "https://facebook.com/very%20long%20url",
-        "https://amazon.com/very%20long%20url",
-        "https://yelp.com/very%20long%20url",
-        "https://reddit.com/very%20long%20url",
-        "https://imdb.com/very%20long%20url",
-        "https://pinterest.com/very%20long%20url",
-        "https://instagram.com/very%20long%20url",
-        "https://linkedin.com/very%20long%20url",
-        "https://ebay.com/very%20long%20url",
+        'https://google.com/very%20long%20url',
+        'https://youtube.com/very%20long%20url',
+        'https://wikipedia.org/very%20long%20url',
+        'https://twitter.com/very%20long%20url',
+        'https://facebook.com/very%20long%20url',
+        'https://amazon.com/very%20long%20url',
+        'https://yelp.com/very%20long%20url',
+        'https://reddit.com/very%20long%20url',
+        'https://imdb.com/very%20long%20url',
+        'https://pinterest.com/very%20long%20url',
+        'https://instagram.com/very%20long%20url',
+        'https://linkedin.com/very%20long%20url',
+        'https://ebay.com/very%20long%20url',
       ],
     }
   },
@@ -34,12 +34,12 @@ const GoTiny = {
 
       // Check if input field is not empty
       if (!this.userInput) {
-        this.showError("Please paste in a long url")
+        this.showError('Please paste in a long url')
       } else {
         // Send request to form handler
-        const res = await fetch("https://gotiny.cc/api", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
+        const res = await fetch('https://gotiny.cc/api', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ input: this.userInput }),
         })
 
@@ -73,29 +73,29 @@ const GoTiny = {
         tiny,
       })
 
-      localStorage.setItem("localHistory", JSON.stringify(this.localHistory))
+      localStorage.setItem('localHistory', JSON.stringify(this.localHistory))
       this.resetLocalHistoryCopyState()
 
-      window.addEventListener("keydown", (e) => {
+      window.addEventListener('keydown', (e) => {
         if (this.showOutput) {
           switch (e.key) {
-            case "c":
+            case 'c':
               this.copyLink()
               break
-            case "Enter":
-            case "Escape":
+            case 'Enter':
+            case 'Escape':
               this.closeOutput()
               break
           }
         }
       })
 
-      this.userInput = ""
+      this.userInput = ''
     },
     copyLink() {
       if (this.showOutput == true) {
-        window.getSelection().selectAllChildren(document.querySelector(".link-output span"))
-        document.execCommand("copy")
+        window.getSelection().selectAllChildren(document.querySelector('.link-output span'))
+        document.execCommand('copy')
         window.getSelection().removeAllRanges()
 
         this.resetLocalHistoryCopyState()
@@ -112,8 +112,8 @@ const GoTiny = {
     },
     changePlaceholder() {
       this.$refs.userInput.setAttribute(
-        "placeholder",
-        "e.g. " + this.placeholderContent[Math.floor(Math.random() * this.placeholderContent.length)]
+        'placeholder',
+        'e.g. ' + this.placeholderContent[Math.floor(Math.random() * this.placeholderContent.length)]
       )
       this.$refs.userInput.focus()
     },
@@ -123,20 +123,20 @@ const GoTiny = {
     },
     historyCopy(e) {
       // Select span with GoTiny link
-      const tiny = e.target.parentElement.parentElement.querySelector("span.tiny")
+      const tiny = e.target.parentElement.parentElement.querySelector('span.tiny')
 
       // Select and copy link to clipboard
       window.getSelection().selectAllChildren(tiny)
-      document.execCommand("copy")
+      document.execCommand('copy')
       window.getSelection().removeAllRanges()
 
       // Set copied property for selected item
       this.resetLocalHistoryCopyState(tiny.textContent)
     },
     clearLocalHistory() {
-      if (confirm("Are you sure you want to clear your local history?")) {
+      if (confirm('Are you sure you want to clear your local history?')) {
         this.localHistory = []
-        localStorage.removeItem("localHistory")
+        localStorage.removeItem('localHistory')
       }
     },
     resetLocalHistoryCopyState(tiny) {
@@ -153,8 +153,8 @@ const GoTiny = {
     this.$refs.userInput.focus()
 
     // Set localHistory from localStorage
-    this.localHistory = JSON.parse(localStorage.getItem("localHistory")) || []
+    this.localHistory = JSON.parse(localStorage.getItem('localHistory')) || []
   },
 }
 
-Vue.createApp(GoTiny).mount("#app")
+Vue.createApp(GoTiny).mount('#app')
