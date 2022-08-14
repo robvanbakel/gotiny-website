@@ -34,7 +34,7 @@ const GoTiny = {
 
       // Check if input field is not empty
       if (!this.userInput) {
-        this.showError('Please paste in a long url')
+        this.showError('Please enter a long url')
       } else {
         // Send request to form handler
         const res = await fetch('https://gotiny.cc/api', {

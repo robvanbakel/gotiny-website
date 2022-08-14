@@ -2,8 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta property="og:image" content="https://gotiny.cc/assets/gotiny_banner.jpg" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta
+      property="og:image"
+      content="https://gotiny.cc/assets/gotiny_banner.jpg"
+    />
     <link rel="icon" type="image/png" href="./assets/favicon.png" />
     <title>GoTiny</title>
 
@@ -13,15 +19,18 @@
     <script src="https://unpkg.com/vue@3.0.5/dist/vue.global.prod.js"></script>
 
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5RMPLV223C"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-5RMPLV223C"
+    ></script>
     <script>
-      window.dataLayer = window.dataLayer || []
+      window.dataLayer = window.dataLayer || [];
       function gtag() {
-        dataLayer.push(arguments)
+        dataLayer.push(arguments);
       }
-      gtag('js', new Date())
+      gtag("js", new Date());
 
-      gtag('config', 'G-5RMPLV223C')
+      gtag("config", "G-5RMPLV223C");
     </script>
   </head>
 
@@ -31,10 +40,19 @@
       <h1>the most lightweight link shortener API</h1>
     </header>
     <div id="app" ref="headWrapper">
-      <div :class="['app-container', showOutput ? 'output' : 'input', {error : error}]">
+      <div
+        :class="['app-container', showOutput ? 'output' : 'input', {error : error}]"
+      >
         <div class="link-input">
           <form v-if="!showOutput" @submit.prevent="goTiny">
-            <input type="text" name="full" id="full" placeholder="Paste in URL…" v-model="userInput" ref="userInput" />
+            <input
+              type="text"
+              name="full"
+              id="full"
+              placeholder="Paste URL…"
+              v-model="userInput"
+              ref="userInput"
+            />
             <button>Go Tiny!</button>
           </form>
         </div>
@@ -76,8 +94,9 @@
           </div>
           <h2>Fast</h2>
           <p>
-            GoTiny is stripped down to just the bare minimals for <span>extremely fast performance</span>. With an
-            average processing time of just ~34ms, nothing comes between you and long URLs.
+            GoTiny is stripped down to just the bare minimals for
+            <span>extremely fast performance</span>. With an average processing
+            time of just ~34ms, nothing comes between you and long URLs.
           </p>
         </div>
         <div class="feature-block" id="secure">
@@ -86,8 +105,10 @@
           </div>
           <h2>Secure</h2>
           <p>
-            Privacy is important. GoTiny does not handle, collect or store <span>any user information</span>. In fact,
-            did you notice the cookie compliance pop-up when visiting this page? Yeah, neither did we.
+            Privacy is important. GoTiny does not handle, collect or store
+            <span>any user information</span>. In fact, did you notice the
+            cookie compliance pop-up when visiting this page? Yeah, neither did
+            we.
           </p>
         </div>
         <div class="feature-block" id="accessible">
@@ -96,9 +117,11 @@
           </div>
           <h2>Accessible</h2>
           <p>
-            You get a short link! You get a short link! Everybody gets a short link! With our
-            <a href="https://www.npmjs.com/package/gotiny" target="_blank">easy to use SDK</a>, you can set up GoTiny
-            into your projects in literally seconds.
+            You get a short link! You get a short link! Everybody gets a short
+            link! With our
+            <a href="https://www.npmjs.com/package/gotiny" target="_blank"
+              >easy to use SDK</a
+            >, you can set up GoTiny into your projects in literally seconds.
           </p>
         </div>
       </section>
@@ -130,11 +153,15 @@
         <li>
           &copy;
           <script>
-            document.write(new Date().getFullYear())
+            document.write(new Date().getFullYear());
           </script>
           <a href="/">gotiny.cc</a>
         </li>
-        <li><a href="https://github.com/robvanbakel/gotiny-api" target="_blank">API</a></li>
+        <li>
+          <a href="https://github.com/robvanbakel/gotiny-api" target="_blank"
+            >API</a
+          >
+        </li>
         <li><a href="mailto:info@gotiny.cc">Contact</a></li>
       </ul>
     </footer>
