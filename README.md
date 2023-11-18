@@ -1,3 +1,9 @@
+> ### GoTiny is no longer available
+>
+> Read more: [GoTiny is shutting down](https://github.com/robvanbakel/gotiny-api/issues/11)
+
+---
+
 # GoTiny Website
 
 The GoTiny website is the easiest and quickest way to generate a short link. When visiting the website, the visitor is greeted by a clean page with a large input field. Because the field autofocuses, a long link can immediately be pasted. Upon submitting, [the API](https://github.com/robvanbakel/gotiny-api) is called and the short link will be presented.
