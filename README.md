@@ -12,7 +12,7 @@ Links shortened on [gotiny.cc](https://gotiny.cc) are stored in `localStorage` a
 
 #### Built With
 
-- [Vue.js](https://v3.vuejs.org)
+- [Nuxt](https://nuxt.com)
 - [Sass](https://sass-lang.com)
 
 Creating short links with GoTiny is accessible for everyone at [gotiny.cc](https://gotiny.cc) and for developers there's an [JavaScript SDK](https://github.com/robvanbakel/gotiny-sdk) which is free and doesn't require authentication. 
