@@ -1,0 +1,23 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "@nuxtjs/eslint-config-typescript",
+    "@vue/eslint-config-prettier"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "overrides": [
+    {
+      "files": ["server/**"],
+      "rules": {
+        "no-console": 0
+      }
+    }
+  ]
+}
