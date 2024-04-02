@@ -7,4 +7,9 @@ export default defineNuxtConfig({
   eslint: {
     lintOnStart: false,
   },
+  routeRules: {
+    "/api/**": {
+      cors: true,
+    },
+  },
 });
