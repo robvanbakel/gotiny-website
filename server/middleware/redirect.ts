@@ -1,13 +1,16 @@
+import db from "~/server/db";
+
 export default defineEventHandler(async (event) => {
   if (event.method === "POST" || ["/"].includes(event.path)) return;
 
-  const { rootApi } = useRuntimeConfig(event);
-  const endpoint = new URL(event.path, rootApi);
+  const code = event.path.slice(1);
 
-  try {
-    const { long } = await $fetch<{ long: string }>(endpoint.href);
-    return sendRedirect(event, long, 308);
-  } catch (err) {
-    console.log("Could not find code:", event.path);
-  }
+  const entry = await db.findOneAndUpdate(
+    { code },
+    { $inc: { visited: 1 }, $set: { lastActive: Date.now() } },
+  );
+
+  if (!entry) return;
+
+  return sendRedirect(event, entry?.long, 308);
 });

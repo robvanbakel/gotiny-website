@@ -36,16 +36,16 @@ const goTiny = async () => {
     showError("Please enter a long url");
   } else {
     // Send request to form handler
-    const { data, error } = await useFetch("/api/generateCode", {
+    const data = await $fetch("/api/generateCode", {
       method: "POST",
       body: { long: userInput.value },
     });
 
     // Output response from API
-    if (!data.value || error.value) {
+    if (!data) {
       showError("We're like 99% sure that's not a valid url");
     } else {
-      outputLink(data.value);
+      outputLink(data);
     }
   }
 };
