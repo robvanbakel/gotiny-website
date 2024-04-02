@@ -1,6 +1,10 @@
 import db from "~/server/db";
 
 export default defineEventHandler(async (event) => {
+  if (event.path === "/api") {
+    throw createError({ status: 400 });
+  }
+
   if (event.method === "POST" || ["/"].includes(event.path)) return;
 
   const code = event.path.slice(1);
