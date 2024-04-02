@@ -7,7 +7,4 @@ export default defineNuxtConfig({
   eslint: {
     lintOnStart: false,
   },
-  runtimeConfig: {
-    rootApi: process.env.ROOT_API,
-  },
 });
