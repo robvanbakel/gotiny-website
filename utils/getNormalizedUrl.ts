@@ -1,14 +1,15 @@
-export default (input: string): string | null => {
-  let urlPrefix = "";
+import isUrl from "is-url";
 
-  if (!input.startsWith("http")) {
-    urlPrefix = "http://";
-  }
+export default (input: string): string => {
+  const fullUrl = (input.startsWith("http") ? "" : "http://") + input;
 
-  try {
-    const urlObject = new URL(urlPrefix + input);
-    return urlObject.href;
-  } catch {
-    return null;
-  }
+  if (!isUrl(fullUrl)) throw new Error("Invalid URL provided");
+
+  const parsed = new URL(fullUrl);
+
+  if (parsed.username) throw new Error("URL cannot have a username");
+
+  const normalized = parsed.href;
+
+  return normalized;
 };

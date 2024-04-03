@@ -1753,6 +1753,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/is-url@npm:^1":
+  version: 1.2.32
+  resolution: "@types/is-url@npm:1.2.32"
+  checksum: 10c0/735e7c8d45c2e7f3ab41d86b9e7c33913eb184533fdc5415a1496155c1d0e076bb9ec712273403daaa37f2a92f5e0bb459135d6d6c835a6a60c694efc16c679b
+  languageName: node
+  linkType: hard
+
 "@types/istanbul-lib-coverage@npm:*, @types/istanbul-lib-coverage@npm:^2.0.0":
   version: 2.0.6
   resolution: "@types/istanbul-lib-coverage@npm:2.0.6"
@@ -5179,8 +5186,10 @@ __metadata:
   dependencies:
     "@nuxtjs/eslint-config-typescript": "npm:^12.1.0"
     "@nuxtjs/eslint-module": "npm:^4.1.0"
+    "@types/is-url": "npm:^1"
     "@vue/eslint-config-prettier": "npm:^9.0.0"
     eslint: "npm:^8.57.0"
+    is-url: "npm:^1.2.4"
     mongodb: "npm:^6.5.0"
     nuxt: "npm:^3.10.3"
     prettier: "npm:^3.2.5"
@@ -5845,6 +5854,13 @@ __metadata:
   dependencies:
     which-typed-array: "npm:^1.1.14"
   checksum: 10c0/fa5cb97d4a80e52c2cc8ed3778e39f175a1a2ae4ddf3adae3187d69586a1fd57cfa0b095db31f66aa90331e9e3da79184cea9c6abdcd1abc722dc3c3edd51cca
+  languageName: node
+  linkType: hard
+
+"is-url@npm:^1.2.4":
+  version: 1.2.4
+  resolution: "is-url@npm:1.2.4"
+  checksum: 10c0/0157a79874f8f95fdd63540e3f38c8583c2ef572661cd0693cda80ae3e42dfe8e9a4a972ec1b827f861d9a9acf75b37f7d58a37f94a8a053259642912c252bc3
   languageName: node
   linkType: hard
 

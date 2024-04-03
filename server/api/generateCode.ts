@@ -6,8 +6,6 @@ export default defineEventHandler(async (event) => {
   const { long } = await readBody<{ long: string }>(event);
 
   const normalizedUrl = getNormalizedUrl(long);
-  if (!normalizedUrl) throw new Error("No valid URL found");
-
   const code = getRandomCode();
 
   await db.insertOne({

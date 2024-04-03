@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "is-url": "^1.2.4",
     "mongodb": "^6.5.0",
     "nuxt": "^3.10.3",
     "vue": "^3.4.19",
@@ -18,6 +19,7 @@
   "devDependencies": {
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "@nuxtjs/eslint-module": "^4.1.0",
+    "@types/is-url": "^1",
     "@vue/eslint-config-prettier": "^9.0.0",
     "eslint": "^8.57.0",
     "prettier": "^3.2.5",

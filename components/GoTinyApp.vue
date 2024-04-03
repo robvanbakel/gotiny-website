@@ -34,19 +34,18 @@ const goTiny = async () => {
   // Check if input field is not empty
   if (!userInput.value) {
     showError("Please enter a long url");
-  } else {
-    // Send request to form handler
+    return;
+  }
+
+  try {
     const data = await $fetch("/api/generateCode", {
       method: "POST",
       body: { long: userInput.value },
     });
 
-    // Output response from API
-    if (!data) {
-      showError("We're like 99% sure that's not a valid url");
-    } else {
-      outputLink(data);
-    }
+    outputLink(data);
+  } catch {
+    showError("We're like 99% sure that's not a valid url");
   }
 };
 
@@ -174,7 +173,7 @@ onMounted(() => {
           <input
             id="full"
             ref="userInputField"
-            v-model="userInput"
+            v-model.trim="userInput"
             autofocus
             type="text"
             name="full"
