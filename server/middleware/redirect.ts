@@ -14,7 +14,10 @@ export default defineEventHandler(async (event) => {
     { $inc: { visited: 1 }, $set: { lastActive: Date.now() } },
   );
 
-  if (!entry) return;
+  if (!entry) {
+    setResponseStatus(event, 404);
+    return;
+  }
 
   return sendRedirect(event, entry?.long, 308);
 });
