@@ -1,11 +1,8 @@
-import { kv } from "@vercel/kv";
 import db from "~/server/db";
 
 export default defineEventHandler(async (event) => {
-  if (event.method === "POST" && event.path === "/api") {
-    const body = await readBody(event);
-    await kv.set(new Date().toISOString(), JSON.stringify(body));
-    return setResponseStatus(event, 404);
+  if (event.path === "/api") {
+    throw createError({ status: 400 });
   }
 
   if (event.method === "POST" || ["/"].includes(event.path)) return;

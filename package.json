@@ -10,7 +10,6 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@vercel/kv": "^1.0.1",
     "is-url": "^1.2.4",
     "mongodb": "^6.5.0",
     "nuxt": "^3.10.3",
