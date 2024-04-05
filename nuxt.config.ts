@@ -7,4 +7,15 @@ export default defineNuxtConfig({
   eslint: {
     lintOnStart: false,
   },
+  app: {
+    head: {
+      link: [
+        {
+          rel: "icon",
+          type: "image/png",
+          href: "/favicon.png",
+        },
+      ],
+    },
+  },
 });
